@@ -16,3 +16,14 @@ connectDB()
     console.log("mongodb connection failed", err);
 
 })
+
+// routes import
+import userRoutes from "./routes/user.routes.js"
+
+// routes declaration
+
+app.use('/api/user', userRoutes);
+
+
+
+
