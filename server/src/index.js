@@ -20,10 +20,8 @@ connectDB()
 // routes import
 import userRoutes from "./routes/user.routes.js"
 
+
 // routes declaration
 
 app.use('/api/users', userRoutes);
-
-
-
 
