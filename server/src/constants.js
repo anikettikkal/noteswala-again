@@ -1,1 +1,1 @@
-export const DB_NAME ="noteswalaagain"
+export const DB_NAME ="noteswalaAgain"
