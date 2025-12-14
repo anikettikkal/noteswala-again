@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
-import { currentUser } from '../../utils/currentuser';
+import React, { useState,useEffect } from 'react';
+import { currentUser } from '../../utils/currentUser';
 
 const Header = () => {
+
+  const [username, setUsername] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+
+  useEffect(() => {
+        const storedUsername = localStorage.getItem('name');
+        setUsername(storedUsername || "Guest");
+    }, []);
 
   function logOut() {
     localStorage.removeItem('currentUser');
     window.location.href = './login'
   }
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -75,7 +87,7 @@ const Header = () => {
               Sign Up
             </a>
 
-            <h4 className='m-2' style={{ color: 'white', fontSize: '25px' }}>{currentUser?.name}</h4>
+            <h4 className='m-2' style={{ color: 'black', fontSize: '20px' }}>{username}</h4>
             <button type="button" className='block bg-red-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-black transition duration-200' onClick={logOut}>Logout</button>
           </div>
         </div>
@@ -101,7 +113,7 @@ const Header = () => {
             Sign Up
           </a>
 
-          <h4 className='m-2' style={{ color: 'white', fontSize: '25px' }}>{currentUser?.name}</h4>
+          <h4 className='m-2' style={{ color: 'black', fontSize: '20px' }}>{username}</h4>
           <button type="button" className='block bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition duration-200' onClick={logOut}>Logout</button>
         </div>
       </div>
