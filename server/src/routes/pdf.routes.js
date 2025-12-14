@@ -1,22 +1,22 @@
 import { Router } from "express";
 import {
-  createFyPdf,
-  createSyPdf,
-  createTyPdf,
+  createFypdf,
+  createSypdf,
+  createTypdf,
   getAllFyPdfs,
   getAllSyPdfs,
   getAllTyPdfs,
   searchFyPdfByTitle,
   searchSyPdfByTitle,
   searchTyPdfByTitle
-} from "../controllers/pdf.controller.js";
+} from "../controllers/pdfs.controller.js";
 
 const router = Router();
 
 /* ===== CREATE PDF ROUTES ===== */
-router.post("/createFyPdf", createFyPdf);
-router.post("/createSyPdf", createSyPdf);
-router.post("/createTyPdf", createTyPdf);
+router.post("/createFyPdf", createFypdf);
+router.post("/createSyPdf", createSypdf);
+router.post("/createTyPdf", createTypdf);
 
 /* ===== GET ALL PDF ROUTES ===== */
 router.get("/FyallPdfs", getAllFyPdfs);
