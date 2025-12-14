@@ -9,6 +9,7 @@ import Signup from './Components/Signup/Signup'
 import Login from './Components/Login/Login'
 import Contact from './Components/Contact/Contact'
 import AboutUs from './Components/AboutUs/AboutUs'
+import Fypdf from './Components/Fypdf/Fypdf'
 
 const router = createBrowserRouter([
   { path: '', element: <Signup /> },
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "aboutus",
         element: <AboutUs />
+      },
+      {
+        path:"Fypdf",
+        element:<Fypdf />
       }
     ]
   }
