@@ -10,6 +10,8 @@ import Login from './Components/Login/Login'
 import Contact from './Components/Contact/Contact'
 import AboutUs from './Components/AboutUs/AboutUs'
 import Fypdf from './Components/Fypdf/Fypdf'
+import Sypdf from './Components/Sypdf/Sypdf'
+import Typdf from './Components/Typdf/Typdf'
 
 const router = createBrowserRouter([
   { path: '', element: <Signup /> },
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path:"Fypdf",
         element:<Fypdf />
+      },
+      {
+        path:"Sypdf",
+        element:<Sypdf />
+      },
+      {
+        path:"Typdf",
+        element:<Typdf />
       }
     ]
   }
