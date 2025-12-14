@@ -5,15 +5,15 @@ import Contact from "../Contact/Contact";
 import AboutUs from "../AboutUs/AboutUs";
 import OurTeam from "../../Views/HomeView/OurTeam";
 
-function Home(){
-  return(
+function Home() {
+  return (
     <>
-    
-    <Enhanced />
-    <HomeLand />
-    <Contact />
-    <AboutUs />
-    <OurTeam />
+
+      <Enhanced />
+      <HomeLand />
+      <Contact />
+      <AboutUs />
+      <OurTeam />
     </>
   )
 }

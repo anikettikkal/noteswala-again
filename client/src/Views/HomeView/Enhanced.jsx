@@ -1,4 +1,5 @@
 import React from 'react';
+import BCSChapters from './BcsChapterPdf';
 
 const Enhanced = () => {
   return (
@@ -78,6 +79,7 @@ const Enhanced = () => {
           </div>
         </div>
         
+        
         {/* Stats section */}
         <div className="mt-24 mb-16">
           <div className="grid grid-cols-1 gap-8 rounded-2xl bg-white p-8 shadow-xl md:grid-cols-3">
@@ -94,6 +96,7 @@ const Enhanced = () => {
                 1 new every second
               </div>
             </div>
+            
             
             {/* Institutions */}
             <div className="flex flex-col items-center rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 p-6 text-center transition-transform hover:scale-105">
@@ -124,6 +127,9 @@ const Enhanced = () => {
             </div>
           </div>
         </div>
+
+        <BCSChapters />
+        
         
         {/* Featured categories */}
         <div className="mb-24">

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { currentUser } from '../../utils/currentuser';
 
 const Header = () => {
+
+  function logOut() {
+    localStorage.removeItem('currentUser');
+    window.location.href = './login'
+  }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -63,11 +69,14 @@ const Header = () => {
               Log In
             </a>
             <a
-              href="/signup"
+              href="/"
               className="bg-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-600 transition duration-200"
             >
               Sign Up
             </a>
+
+            <h4 className='m-2' style={{ color: 'white', fontSize: '25px' }}>{currentUser?.name}</h4>
+            <button type="button" className='block bg-red-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-black transition duration-200' onClick={logOut}>Logout</button>
           </div>
         </div>
 
@@ -86,11 +95,14 @@ const Header = () => {
             Log In
           </a>
           <a
-            href="/signup"
+            href="/"
             className="block bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition duration-200"
           >
             Sign Up
           </a>
+
+          <h4 className='m-2' style={{ color: 'white', fontSize: '25px' }}>{currentUser?.name}</h4>
+          <button type="button" className='block bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition duration-200' onClick={logOut}>Logout</button>
         </div>
       </div>
     </nav>

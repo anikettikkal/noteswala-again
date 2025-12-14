@@ -16,6 +16,7 @@ const HomeLand = () => {
       </div>
       
       {/* Main content container */}
+      
       <div className="container relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-8 lg:py-16">
         {/* Header section */}
         <header className="text-center">
@@ -25,7 +26,7 @@ const HomeLand = () => {
           <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-700 md:text-xl">
             50K new study notes added every day, from the world's most active student communities
           </p>
-        </header>
+        </header>        
         
         {/* Triangle illustration with arrow */}
         <div className="relative mx-auto my-12 flex w-full max-w-6xl justify-between">
