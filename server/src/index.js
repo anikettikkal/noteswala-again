@@ -19,9 +19,12 @@ connectDB()
 
 // routes import
 import userRoutes from "./routes/user.routes.js"
+import pdfRoutes from "./routes/pdf.routes.js"
 
 
 // routes declaration
 
 app.use('/api/users', userRoutes);
+app.use("/api/pdfs", pdfRoutes);
+
 
