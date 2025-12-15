@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BCSChapters = () => {
+  const navigate = useNavigate()
   const chapters = [
     {
       id: 1,
@@ -10,7 +12,8 @@ const BCSChapters = () => {
       icon: '📚',
       bgGradient: 'from-blue-500 to-blue-600',
       buttonColor: 'bg-blue-500 hover:bg-blue-600',
-      chapters: ['C Programming', 'Digital Electronics', 'Mathematics', 'Communication Skills']
+      chapters: ['C Programming', 'Digital Electronics', 'Mathematics', 'Communication Skills'],
+      path: "/Fypdf"
     },
     {
       id: 2,
@@ -20,7 +23,8 @@ const BCSChapters = () => {
       icon: '📖',
       bgGradient: 'from-purple-500 to-pink-500',
       buttonColor: 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600',
-      chapters: ['Data Structures', 'OOP with C++', 'Database Management', 'Operating Systems']
+      chapters: ['Data Structures', 'OOP with C++', 'Database Management', 'Operating Systems'],
+      path:"/Sypdf"
     },
     {
       id: 3,
@@ -30,7 +34,8 @@ const BCSChapters = () => {
       icon: '🎓',
       bgGradient: 'from-green-500 to-teal-500',
       buttonColor: 'bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600',
-      chapters: ['Software Engineering', 'Web Development', 'AI & ML', 'Network Security']
+      chapters: ['Software Engineering', 'Web Development', 'AI & ML', 'Network Security'],
+      path:'/Typdf'
     }
   ];
 
@@ -69,11 +74,11 @@ const BCSChapters = () => {
                       {item.year}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {item.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {item.description}
                   </p>
@@ -97,7 +102,9 @@ const BCSChapters = () => {
                   </div>
 
                   {/* Button */}
-                  <button className={`w-full ${item.buttonColor} text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group`}>
+                  <button className={`w-full ${item.buttonColor} text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group`}
+                    onClick={() => navigate(item.path)}
+                  >
                     Get PDF Books
                     <svg
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -119,7 +126,7 @@ const BCSChapters = () => {
           })}
         </div>
 
-        
+
       </div>
     </div>
   );

@@ -1,25 +1,32 @@
-import React, { useState,useEffect } from 'react';
-import { currentUser } from '../../utils/currentUser';
+import React, { useState, useEffect } from 'react';
 
 const Header = () => {
 
-  const [username, setUsername] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
 
+  const [username, setUsername] = useState("Guest");
+
   useEffect(() => {
-        const storedUsername = localStorage.getItem('name');
-        setUsername(storedUsername || "Guest");
-    }, []);
+    const storedUser = localStorage.getItem("currentUser");
+
+    if (storedUser && storedUser !== "undefined") {
+      const user = JSON.parse(storedUser);
+      setUsername(user?.name || "Guest");
+    }
+  }, []);
+
+
 
   function logOut() {
-    localStorage.removeItem('currentUser');
-    window.location.href = './login'
-  }
+  localStorage.removeItem("currentUser");
+  window.location.href = "/login";
+}
 
 
-  
+
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,7 +38,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo and Brand Name */}
           <div className="flex items-center space-x-3">
-            <a href="/" className="flex items-center">
+            <a href="/home" className="flex items-center">
               <img
                 src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149341898.jpg?w=2000" // Replace with your logo image
                 alt="BCS-Noteswala Logo"

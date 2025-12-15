@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {currentUser} from '../../utils/currentUser';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
@@ -9,10 +8,12 @@ const Login = () => {
 
   // Redirect if already logged in
   useEffect(() => {
-    if (currentUser) {
+    const storedUser = localStorage.getItem("currentUser");
+    if (storedUser && storedUser !== "undefined") {
       window.location.href = "/home";
     }
   }, []);
+
 
   const loginUser = async (e) => {
     e.preventDefault(); // prevent page reload
@@ -22,7 +23,10 @@ const Login = () => {
 
       if (res.data.success) {
         await Swal.fire("Success", res.data.message, "success");
-        localStorage.setItem("currentUser", JSON.stringify(res.data.data));
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify(res.data.data)
+        );
         window.location.href = "/home";
       } else {
         showError(res.data.message);
