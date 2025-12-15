@@ -63,7 +63,7 @@ const BCSChapters = () => {
                 {/* Icon Section */}
                 <div className={`bg-gradient-to-r ${item.bgGradient} p-8`}>
                   <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <span className="text-5xl">{item.icon}</span>
+                    <span  className="text-5xl">{item.icon}</span>
                   </div>
                 </div>
 
