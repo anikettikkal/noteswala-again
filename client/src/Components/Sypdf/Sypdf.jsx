@@ -101,8 +101,7 @@ const Sypdf = () => {
                 rel="noreferrer"
                 className="mt-auto text-white font-semibold py-2.5
                   rounded-xl text-center
-                  bg-gradient-to-r from-purple-500 to-pink-500
-                  hover:from-purple-600 hover:to-pink-600
+                  bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600
                   transition-all duration-300 shadow-md"
               >
                 📘 View PDF
